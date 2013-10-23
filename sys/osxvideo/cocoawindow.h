@@ -17,12 +17,12 @@
  * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  *
- * The development of this code was made possible due to the involvement of Pioneers 
+ * The development of this code was made possible due to the involvement of Pioneers
  * of the Inevitable, the creators of the Songbird Music player
- * 
+ *
  */
 
-/* inspiration gained from looking at source of osx video out of xine and vlc 
+/* inspiration gained from looking at source of osx video out of xine and vlc
  * and is reflected in the code
  */
 
@@ -44,7 +44,7 @@ struct _GstOSXImage;
     int width, height;
     BOOL fullscreen;
     BOOL keepAspectRatio;
-    NSOpenGLContext* fullScreenContext; 
+    NSOpenGLContext* fullScreenContext;
     NSOpenGLContext* actualContext;
     NSTrackingArea *trackingArea;
     GstNavigation *navigation;
@@ -63,7 +63,7 @@ struct _GstOSXImage;
 - (void) setFullScreen: (BOOL) flag;
 - (void) setKeepAspectRatio: (BOOL) flag;
 - (void) reshape;
-- (void) setVideoSize: (int) w: (int) h;
+- (void) setVideoSize: (int) w : (int) h;
 - (NSRect) getDrawingBounds;
 - (BOOL) haveSuperview;
 - (void) haveSuperviewReal: (NSMutableArray *)closure;

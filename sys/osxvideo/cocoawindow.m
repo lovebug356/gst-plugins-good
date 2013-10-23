@@ -16,8 +16,8 @@
  * License along with this library; if not, write to the
  * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
- * 
- * The development of this code was made possible due to the involvement of Pioneers 
+ *
+ * The development of this code was made possible due to the involvement of Pioneers
  * of the Inevitable, the creators of the Songbird Music player
  *
  */
@@ -331,20 +331,20 @@ const gchar* gst_keycode_to_keyname(gint16 keycode)
 /* The object has to be released */
 - (id) initWithContentNSRect: (NSRect) rect
 		 styleMask: (unsigned int) styleMask
-		   backing: (NSBackingStoreType) bufferingType 
+		   backing: (NSBackingStoreType) bufferingType
 		     defer: (BOOL) flag
 		    screen:(NSScreen *) aScreen
 {
   self = [super initWithContentRect: rect
 		styleMask: styleMask
-		backing: bufferingType 
-		defer: flag 
+		backing: bufferingType
+		defer: flag
 		screen:aScreen];
 
   GST_DEBUG ("Initializing GstOSXvideoSinkWindow");
 
   gstview = [[GstGLView alloc] initWithFrame:rect];
-  
+
   if (gstview)
     [self setContentView:gstview];
   [self setTitle:@"GStreamer Video Output"];
@@ -496,7 +496,7 @@ const gchar* gst_keycode_to_keyname(gint16 keycode)
 
   glPixelStorei (GL_UNPACK_ALIGNMENT, 1);
   glPixelStorei (GL_UNPACK_ROW_LENGTH, width);
-  
+
   glBindTexture (GL_TEXTURE_RECTANGLE_EXT, pi_texture);
 
   /* Use VRAM texturing */
@@ -520,7 +520,7 @@ const gchar* gst_keycode_to_keyname(gint16 keycode)
   // glPixelStorei (GL_UNPACK_ROW_LENGTH, 0); WHY ??
 
   glTexImage2D (GL_TEXTURE_RECTANGLE_EXT, 0, GL_RGBA,
-		width, height, 0, 
+		width, height, 0,
 		GL_YCBCR_422_APPLE, GL_UNSIGNED_SHORT_8_8_APPLE, data);
 
 
@@ -661,7 +661,7 @@ const gchar* gst_keycode_to_keyname(gint16 keycode)
   } else if (fullscreen && !flag) {
     // fullscreen now and needs to go back to normal
     initDone = NO;
-    
+
     actualContext = [self openGLContext];
 
     [NSOpenGLContext clearCurrentContext];
@@ -681,7 +681,7 @@ const gchar* gst_keycode_to_keyname(gint16 keycode)
   }
 }
 
-- (void) setVideoSize: (int) w:(int) h {
+- (void) setVideoSize: (int) w :(int) h {
   GST_LOG ("width:%d, height:%d", w, h);
 
   width = w;
@@ -769,7 +769,7 @@ const gchar* gst_keycode_to_keyname(gint16 keycode)
   navigation = nav;
 }
 
-- (void)sendMouseEvent:(NSEvent *)event: (const char *)event_name
+- (void)sendMouseEvent:(NSEvent *)event : (const char *)event_name
 {
   NSPoint location;
   gint button;
@@ -806,7 +806,7 @@ const gchar* gst_keycode_to_keyname(gint16 keycode)
   gst_navigation_send_mouse_event (navigation, event_name, button, x, y);
 }
 
-- (void)sendKeyEvent:(NSEvent *)event: (const char *)event_name
+- (void)sendKeyEvent:(NSEvent *)event : (const char *)event_name
 {
   if (!navigation)
     return;
