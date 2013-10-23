@@ -19,7 +19,7 @@ libgstdeinterlace_la_SOURCES = \
 nodist_libgstdeinterlace_la_SOURCES = $(ORC_NODIST_SOURCES)
 
 libgstdeinterlace_la_CFLAGS = \
-	$(GST_PLUGINS_BASE_CFLAGS) $(GST_BASE_CFLAGS) $(GST_CFLAGS) $(ORC_CFLAGS)
+	$(GST_PLUGINS_BASE_CFLAGS) $(GST_BASE_CFLAGS) $(GST_CFLAGS) $(ORC_CFLAGS) -Wno-tautological-constant-out-of-range-compare
 libgstdeinterlace_la_LIBADD = \
 	$(GST_PLUGINS_BASE_LIBS) -lgstvideo-$(GST_API_VERSION) $(GST_BASE_LIBS) $(GST_LIBS) $(ORC_LIBS)
 libgstdeinterlace_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
